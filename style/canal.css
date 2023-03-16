@@ -1,0 +1,134 @@
+/* Styles pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    background-color: #f0f0f0;
+}
+
+/* Centrer le contenu de la page */
+.center-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+}
+
+.nomChat {
+font-size: 24px;
+font-weight: bold;
+margin: 0;
+}
+
+/* Styles pour la section des messages */
+nav {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.chat-messages {
+    overflow-y: scroll;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Styles pour chaque message */
+.message {
+margin-bottom: 10px;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.info {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 5px;
+}
+
+.utilisateur {
+font-size: 16px;
+font-weight: bold;
+margin: 0;
+}
+
+.dateEtHeure {
+font-size: 14px;
+margin: 0;
+color: #888;
+}
+
+.contenu {
+margin: 0;
+white-space: pre-wrap;
+}
+
+.chat-form {
+max-width: 800px;
+width: 100%;
+}
+
+.chat-form form {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100%;
+}
+
+.chat-form textarea {
+flex: 1;
+height: 40px;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: none;
+}
+
+.chat-form input[type="submit"] {
+margin-left: 10px;
+padding: 10px;
+background-color: #d9534f;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.chat-form input[type="submit"]:hover {
+background-color: #e74c3c;
+}
