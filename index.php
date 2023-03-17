@@ -6,9 +6,6 @@
 		exit();
 	}
 
-	require_once './phpServicies/database.php';
-
-
 	if (!empty($_POST['username']) && !empty($_POST['password']))
 	{
 		$USERNAME = $_POST['username'];
@@ -38,7 +35,7 @@
 	<main class="center-block">
 		<form class="" action="." method="post">
 			<fieldset>
-				<legend>Connection</legend>
+				<legend>Connexion</legend>
 
 				<label for="identifiant">Nom d’utilisateur</label> <br>
 				<input type="text" id="identifiant" name="identifiant" required autofocus> <br>
@@ -53,6 +50,6 @@
 </body>
 </html>
 
-<?php 
+<?php
 	ob_flush();
 ?>
