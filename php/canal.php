@@ -4,10 +4,6 @@
 ?>
 
 <?php
-$pdo = getPDOConnection();
-?>
-
-<?php
 if (isset($_GET['chat'])) {
     $nom_chat = $_GET['chat'];
 
