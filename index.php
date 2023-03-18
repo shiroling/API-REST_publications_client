@@ -1,24 +1,26 @@
 <?php 
 	session_start();
-	//on ouvre la session et on redirige sur l'acceuil si on est déja co
-	if(isset($_SESSION['id'])) {
-		header("Location: ./php/accueil.php");
+	require_once('./php/apiRepository.php');
+	//on ouvre la session et on redirige sur l'acceuil si on est déjà connecté
+	if(isset($_SESSION['token'])) {
+		header("Location: ./php/canal.php");
 		exit();
 	}
 
-	if (!empty($_POST['username']) && !empty($_POST['password']))
+	if (!empty($_POST['identifiant']) && !empty($_POST['password']))
 	{
-		$USERNAME = $_POST['username'];
+		$USERNAME = $_POST['identifiant'];
 		$PASSWORD = $_POST['password'];
 		$token = get_token($USERNAME, $PASSWORD);
 
-	    if ($id_gen) {
+	    if ($token != null) {
+	    	error_log("ca marcha : $token");
 			# définition des informations relatives à l’utilisateur
 			$_SESSION['token'] = $token;
-			header('Location: ./php/accueil.php');
+			header('Location: ./php/canal.php');
 			exit();
 		} else {
-			echo "<script>alert('Identifiant ou mot de passe incorrect');</script>";
+	    	error_log("ca pas marcha !");
 		}
 	}
 ?>
@@ -28,7 +30,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="./css/login.css" rel="stylesheet">
+	<link href="./style/style.css" rel="stylesheet">
 	<title>Connectez vous !</title>
 </head>
 <body>
@@ -37,7 +39,7 @@
 			<fieldset>
 				<legend>Connexion</legend>
 
-				<label for="identifiant">Nom d’utilisateur</label> <br>
+				<label for="identifiant">Identifiant</label> <br>
 				<input type="text" id="identifiant" name="identifiant" required autofocus> <br>
 
 				<label for="mdp">Mot de passe</label> <br>

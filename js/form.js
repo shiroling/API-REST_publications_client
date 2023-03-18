@@ -1,4 +1,7 @@
-function publier(nomChat, id) {
+
+function publier(token) {
+
+  let id = getId(token);
   const messageInput = document.querySelector('textarea[name="message"]');
   const message = messageInput.value;
   // On transmet au fichier php

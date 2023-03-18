@@ -1,4 +1,4 @@
-function remplirChat(nom_chat) {
+function remplirChat(nom_chat, role) {
   const url = "../phpServicies/messages/recuperer.php?nom_chat=" + encodeURIComponent(nom_chat);
 
   $.ajax({
@@ -48,3 +48,35 @@ function remplirChat(nom_chat) {
   });
 }
 
+function getPublications(token) {
+  // Construct the URL
+  const url = 'http://localhost/api/src/api/appServer.php';
+
+  // Create the request headers
+  const headers = {
+    'Authorization': 'Bearer ' + token
+  };
+
+  // Send the GET request with the headers
+  fetch(url, {
+    method: 'GET',
+    headers: headers
+  })
+  .then(response => {
+    if (response.ok) {
+      // Handle successful response here
+      return response.json();
+    } else {
+      // Handle error response here
+      throw new Error('Request failed');
+    }
+  })
+  .then(data => {
+    // Handle response data here
+    console.log("25565"+data);
+  })
+  .catch(error => {
+    // Handle error here
+    console.error("25565"+error);
+  });
+}
